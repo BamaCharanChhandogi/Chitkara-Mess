@@ -56,6 +56,31 @@ nav i{
     margin-top: 2rem;
     text-align: center;
 }
+#main .recipe-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 0.8rem;
+
+}
+.recipe{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+
+}
+.recipe img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+.recipe p{
+    font-size: 1rem;
+    margin: 0px auto;
+}
 /* responsive */
 @media screen and (max-width:600px) {
     header nav{
