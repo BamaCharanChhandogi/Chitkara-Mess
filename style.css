@@ -81,6 +81,28 @@ nav i{
     font-size: 1rem;
     margin: 0px auto;
 }
+.recipe span{
+    font-weight: 600;
+}
+.recipe h3{
+    margin-block: 5px;
+}
+.recipe button{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    margin: 10px auto;
+    cursor: pointer;
+    background-color: #FFE569;
+    border: none;
+}
+.recipe button:hover{
+    background-color: #c0ac4a;
+}
+/* recipe Content */
+.recipe .recipeContent{
+    display: none;
+}
 /* responsive */
 @media screen and (max-width:600px) {
     header nav{

@@ -11,13 +11,25 @@ let fetchRecipe = async (query) => {
     response.meals.forEach(meal=>{
         let recipeDiv=document.createElement('div');
         recipeDiv.classList.add('recipe');
-        recipeDiv.innerHTML=`
-        <img src="${meal.strMealThumb}"></img>
+        recipeDiv.innerHTML=`<img src="${meal.strMealThumb}"></img>
         <h3>${meal.strMeal}</h3>
-         <p>${meal.strArea}<p>
-         <p>${meal.strCategory}<p>
-        `
+         <p><span>${meal.strArea}</span> Dish<p>
+         <p>Belongs to <span>${meal.strCategory}</span> Category<p>`
+         //show recipe button working
+        let button=document.createElement('button');
+        button.textContent="View Recipe";
+        recipeDiv.appendChild(button);
         recipeContainer.appendChild(recipeDiv);
+        //recipeContent
+        let recipeContentDiv=document.createElement('div');
+        recipeContentDiv.classList.add('recipeContent');
+        recipeContentDiv.innerHTML=`<p>${meal.strInstructions}</p>`;
+        recipeDiv.appendChild(recipeContentDiv);
+        button.addEventListener('click',function(){
+            document.getElementsByClassName('recipeContent')[0].style.display="block";
+
+        });
+
     });
 
 }
