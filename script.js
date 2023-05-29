@@ -19,20 +19,28 @@ let fetchRecipe = async (query) => {
         let button=document.createElement('button');
         button.textContent="View Recipe";
         recipeDiv.appendChild(button);
-        recipeContainer.appendChild(recipeDiv);
         //recipeContent
-        let recipeContentDiv=document.createElement('div');
-        recipeContentDiv.classList.add('recipeContent');
-        recipeContentDiv.innerHTML=`<p>${meal.strInstructions}</p>`;
-        recipeDiv.appendChild(recipeContentDiv);
+        // let recipeContentDiv=document.createElement('div');
+        // recipeContentDiv.classList.add('recipeContent');
+        // recipeContentDiv.innerHTML=`<p>${meal.strInstructions}</p>`;
+        // recipeDiv.appendChild(recipeContentDiv);
         button.addEventListener('click',function(){
-            document.getElementsByClassName('recipeContent')[0].style.display="block";
-
+            openRecipePopup(meal);
         });
+        recipeContainer.appendChild(recipeDiv);
 
     });
 
 }
+// working openRecipeMeal function
+let openRecipePopup=(meal)=>{
+    document.getElementById('recipe-popup').innerHTML="";
+    document.getElementById('recipe-content').style.display='block';
+    document.getElementById('recipe-popup').innerHTML=`${meal.strInstructions}`;
+}
+document.getElementById('btn').addEventListener('click',()=>{
+    document.getElementById('recipe-content').style.display='none';
+});
 //button working
 searchBtn.addEventListener('click', function (e) {
     e.preventDefault();
