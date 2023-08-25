@@ -47,3 +47,22 @@ searchBtn.addEventListener('click', function (e) {
     let recipeValue = searchBox.value.trim();
     fetchRecipe(recipeValue);
 });
+
+//default loading
+let fetchDefaultRecipe = async () => {
+    recipeContainer.innerHTML="<h2>Fetching defaultRecipe...</h2>";
+    let data = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
+    let response = await data.json();
+    recipeContainer.innerHTML="";
+    response.meals.forEach(meal=>{
+        let recipeDiv=document.createElement('div');
+        recipeDiv.classList.add('recipe');
+        recipeDiv.innerHTML=`<img src="${meal.strMealThumb}"></img>
+        <h3>${meal.strMeal}</h3>
+        <h3>Tags: ${meal.strTags}</h3>`
+        recipeContainer.appendChild(recipeDiv);
+
+    });
+
+}
+fetchDefaultRecipe();
