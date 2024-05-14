@@ -2,6 +2,3 @@ This project represents a limited food delivery solution showcasing certain func
 
 If you're interested in exploring a complete food delivery platform, please visit the following link:<br/>
  [https://enatega.com](https://enatega.com/?aff=2l6Ed)
-
-if you want to check out a comprehensive Food Delivery Solution, please visit the following link. 
-https://enatega.com/?aff=2l6Ed
